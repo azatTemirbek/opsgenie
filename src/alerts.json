@@ -1,4 +1,4 @@
-var DATA = {
+{
   "alerts": [
     {
       "id": "326c1aac-288d-45ae-add0-20b5018db638",
@@ -1064,4 +1064,3 @@ var DATA = {
     "toTimestamp": 1477667420148
   }
 }
-export default DATA
