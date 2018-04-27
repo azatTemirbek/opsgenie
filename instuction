@@ -1,0 +1,40 @@
+Merhaba Azat,
+
+Aşağıda ödeve ilişkin detayları bulacaksın. Code base'inin nasıl ilerlediğini bizimle bir şekilde paylaşmanı bekliyoruz (en sağlıklısı bir repo üzerinden paylaşmak olabilir). Github, bitbucket veya gitlab üzerinden paylaşım verebilirsin.
+
+Github kullanıcı adlarımız: celljuke, kaplanarif
+Gitlab kullanıcı adlarımız: selcuk1, arifkpln
+Bitbucket kullanıcı adlarımız: celljuke, arifkpln
+
+Süre açısından 3 günlük bir kısıtın var ancak çok geçe bırakmadan erkenden tamamlayıp göndermeni tercih ederiz.
+
+Ödev Detayları:
+Ekte 2 adet JSON dosyası bulacaksın. Bir tanesinde alert listesi bulunuyor. 
+Alert kavramı, projemizin main domain'i. Diğer dosyada ise, bazı alert'lere 
+ait note'lar göreceksin. Dokümanları açıp incelediğinde, aralarındaki bağı
+ kolaylıkla anlayacağını düşünüyoruz. Bir alert'in birden çok note'u olabiliyor.
+
+(Mevcut OpsGenie uygulamamıza trial üye olarak, gerçekte çalışan Alert sayfasını inceleyebilirsiniz.)
+
+Senden istediğimiz görevin detayları şöyle:
+İstediğin framework'ü kullanabilirsin (Angular, Vue, React)
+Single page application olmasını bekliyoruz.
+Module bundler kullanılmalı (webpack, rollup etc.)
+En az 2 farklı sayfa (sayfa ve/veya container) olmalısını bekliyoruz.
+İlk sayfada alert'leri listelemesin (seçeceğin en az 4-5 field olsun)
+Diğer sayfada bir alert'in tüm field'larını görelim ve note dosyasından ilişkili note'ları da gösterelim.
+"sayfa/container" nedir? -> sayfa olabilir, modal dialog olabilir,  sana kalmış.
+
+Bonus Issuelar
+Görselliği sana bırakıyoruz. UX konusunda serbestsin.
+Alert data'sı üzerinde "createdAtTimestamp" field'ı var. Bu field'ı baz alarak, varolan alert'leri bir grafik üzerinde sunabilirsin. Grafik olarak "ne" ve "nasıl" olmalı, bunun detayını da sana bırakıyoruz.
+Unit test yazımı. Coverage en az %60 olmalı.
+Temel css için başarılı template'lerden biriyle ilerleyebilirsin ya da sıfırdan ilerleyebilirsin. Hangisini neden seçtiğinizi 1-2 cümle ile detaylandırmanı isteyeceğiz.
+
+Kısıtlar
+Hazır template ve "CLI" çözümlerinden uzak durmanı rica ediyoruz.
+
+Takıldığın bir konu olursa bu e-postaya reply all diyerek çekinmeden ulaşabilirsin.
+
+Bol Şanslar,
+OpsGenie Yetenek Ekibi
