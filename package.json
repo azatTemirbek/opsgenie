@@ -1,0 +1,19 @@
+{
+  "name": "oops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e178551/ooops.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/e178551/ooops/issues"
+  },
+  "homepage": "https://github.com/e178551/ooops#readme"
+}
