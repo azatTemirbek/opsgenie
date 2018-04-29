@@ -1,39 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import ALERTS from './data/alerts.json';
-import NOTES from './data/notes.json';
-
 /**
- * base class to easy connection between components
- * i will extend all the components from this Base Component
- * todo export class to another file
+ * coponents
  */
-export class Base extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            alerts: ALERTS.alerts,
-            range: ALERTS.dateTimeRange,
-            notes: NOTES.notes
-        };
-    }
-}
-
+import Card from "./components/Card";
+import {Item} from "./components/Item";
+import {Base} from "./data/Base";
+/**
+ * css
+ */
+import './App.css';
 /**
  * Start ui class
  */
-import './App.css';
-class App extends Base {
-    constructor() {
-        super();
+export default class App extends Base {
+    constructor(props) {
+        super(props);
     }
-
     render() {
-        console.log(this.state);
-        return <div className="DottedBox">data</div>
+        return (
+            <Card className={''}>
+                <div data-slot="header">
+                    Navigation component normally
+                </div>
+                <div data-slot="body" className={'list-container'}>
+                    {this.state.alerts.map(item => {
+                        return (
+                            <Item
+                                className={'card text-white bg-primary mb-3'}
+                                key={item.id}
+                                {...item}
+                            />
+                        )
+                    })}
+                </div>
+                <div data-slot="footer">
+                    foooter component
+                </div>
+            </Card>
+        );
     }
 }
-export default App;
 
 const wrapper = document.getElementById("app");
 wrapper ? ReactDOM.render(<App />, wrapper) : false;
