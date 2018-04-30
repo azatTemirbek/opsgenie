@@ -19,9 +19,9 @@ export default class Card extends Component {
     render() {
         return (
             <div className={this.props.className}>
-                <Slot className="card-header" slot='header'>{this.props.children}</Slot>
-                <Slot className="card-body  " slot='body'>{this.props.children}</Slot>
-                <Slot className="card-footer" slot='footer'>{this.props.children}</Slot>
+                <Slot slot='header'>{this.props.children}</Slot>
+                <Slot slot='body'>{this.props.children}</Slot>
+                <Slot slot='footer'>{this.props.children}</Slot>
             </div>
         )
     }
