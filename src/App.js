@@ -64,7 +64,8 @@ class App extends Base {
                 }
                 {this.state.CurrentAlert &&
                     <CurrentAlertComponent
-                        {...this.state.CurrentAlert}
+                        CurrentAlert = {this.state.CurrentAlert}
+                        list={this.myfilter(this.state.CurrentAlert)}
                         handleClickBtn={this.handleClickBtn}
                     />
                 }

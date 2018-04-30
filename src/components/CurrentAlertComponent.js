@@ -1,13 +1,9 @@
-import React from "react";
+import React,{Component} from "react";
 // import ReactDOM from "react-dom";
 import Card from "./Card";
 import {Base} from "../data/Base";
 
-export class CurrentAlertComponent extends Base {
-    constructor (props){
-        super(props);
-        this.list = this.myfilter(this.state.CurrentAlert);
-    }
+export class CurrentAlertComponent extends Component {
 
     render (){
         return (
@@ -17,9 +13,9 @@ export class CurrentAlertComponent extends Base {
                         <div className="col">
                             <div className="float-left">
                                 <div className="col">
-                                    {this.state.CurrentAlert.isSeen && <i className="fa fa-eye text-dark"></i> }
-                                    {!this.state.CurrentAlert.isSeen && <i className="fa fa-eye-slash text-danger"></i> }
-                                    {this.state.CurrentAlert.owner && <span className="badge badge-dark text-white ml-3">Owner : {this.state.CurrentAlert.owner}</span> }
+                                    {this.props.CurrentAlert.isSeen && <i className="fa fa-eye text-dark"></i> }
+                                    {!this.props.CurrentAlert.isSeen && <i className="fa fa-eye-slash text-danger"></i> }
+                                    {this.props.CurrentAlert.owner && <span className="badge badge-dark text-white ml-3">Owner : {this.props.CurrentAlert.owner}</span> }
                                 </div>
                             </div>
                             <div className="float-right">
@@ -34,19 +30,19 @@ export class CurrentAlertComponent extends Base {
                     </div>
                 </div>
                 <div className="card-body  " data-slot="body">
-                    {Object.keys(this.state.CurrentAlert).map(el=>{
-                        switch (typeof this.state.CurrentAlert[el]){
+                    {Object.keys(this.props.CurrentAlert).map(el=>{
+                        switch (typeof this.props.CurrentAlert[el]){
                             case 'boolean':
                                 return (
                                     <div className="card-title" key={el}>
-                                        {el} : {this.state.CurrentAlert[el] && <i className="fa fa-check-circle text-success"></i>}
-                                               {!this.state.CurrentAlert[el] && <i className="fa fa-times-circle text-danger"></i>}
+                                        {el} : {this.props.CurrentAlert[el] && <i className="fa fa-check-circle text-success"></i>}
+                                               {!this.props.CurrentAlert[el] && <i className="fa fa-times-circle text-danger"></i>}
                                     </div>
                                 );
                             case 'object':
                                 return (
                                     <div className="card-title" key={el}>
-                                        {el} : {this.state.CurrentAlert[el].map(e=>{
+                                        {el} : {this.props.CurrentAlert[el].map(e=>{
                                             return(
                                                 <span key={e} className="badge badge-warning m-2 p-2">{e}</span>
                                             )
@@ -56,7 +52,7 @@ export class CurrentAlertComponent extends Base {
                             default :
                                 return (
                                     <div className="card-title" key={el}>
-                                        {el} : {this.state.CurrentAlert[el]}
+                                        {el} : {this.props.CurrentAlert[el]}
                                     </div>
                                 )
                         }
@@ -66,11 +62,11 @@ export class CurrentAlertComponent extends Base {
                 </div>
 
                 {
-                    this.list &&
+                    this.props.list &&
                     <div className="" data-slot="footer">
                         <h4 className='text-center' >Notes</h4>
                         {
-                            this.list.map((item)=>{
+                            this.props.list.map((item)=>{
                                 if (item.note.trim() !== ''){
                                     return (
                                         <li className='p-3 m-3' key={item.id}>{item.note}</li>
