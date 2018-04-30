@@ -1,12 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 /**
  * coponents
  */
 import Card from "./components/Card";
 import {Item} from "./components/Item";
-import {Base} from "./data/Base";
 import {CurrentAlertComponent} from "./components/CurrentAlertComponent";
+import ALERTS from './data/alerts.json';
+import NOTES from './data/notes.json';
 /**
  * css
  */
@@ -15,10 +16,40 @@ import './App.css';
 /**
  * Start ui class
  */
-class App extends Base {
+class App extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            alerts: ALERTS.alerts,
+            range: ALERTS.dateTimeRange,
+            notes: NOTES.notes
+        };
         this.handleClickBtn = this.handleClickBtn.bind(this);
+        this.hasItem = this.hasItem.bind(this);
+        this.myfilter= this.myfilter.bind(this);
+    }
+    /**
+     * checks for is alert exists in alerts array?
+     * @param aler
+     */
+    hasItem(aler){
+        let arr =  this.state.alerts.filter((item)=>{
+            return item.id === aler.id
+        });
+        return arr[0];
+    }
+
+    /**
+     * returns list of notes
+     * one to many relationship
+     * @param aler
+     */
+    myfilter(aler){
+        if (this.hasItem(aler)){
+            return this.state.notes.filter((item)=>{
+                return aler.id === item.alertId;
+            })
+        }
     }
 
     /**

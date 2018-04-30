@@ -1,7 +1,6 @@
 import React,{Component} from "react";
 // import ReactDOM from "react-dom";
 import Card from "./Card";
-import {Base} from "../data/Base";
 
 export class CurrentAlertComponent extends Component {
 
@@ -62,16 +61,14 @@ export class CurrentAlertComponent extends Component {
                 </div>
 
                 {
-                    this.props.list &&
+                    this.props.list.length > 0 &&
                     <div className="" data-slot="footer">
                         <h4 className='text-center' >Notes</h4>
                         {
                             this.props.list.map((item)=>{
-                                if (item.note.trim() !== ''){
-                                    return (
-                                        <li className='p-3 m-3' key={item.id}>{item.note}</li>
-                                    )
-                                }
+                                return (
+                                    <li className='p-3 m-3' key={item.id}>{item.note}</li>
+                                )
                             })
                         }
                     </div>}
