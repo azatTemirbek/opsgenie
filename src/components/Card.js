@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Card.css';
 
 export function Slot({ children, slot }) {
     let slottedChild = null;
